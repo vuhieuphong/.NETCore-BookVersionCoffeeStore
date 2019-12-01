@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js" 
+            integrity="sha256-g1QKGxqsp+x5JkuN/JjHl96je2wztgS5Wo4h4c7gm9M=" 
+            crossorigin="anonymous"></script>
+
+    <title>@ViewBag.Title</title>
+    <style>
+        .input-validation-error {
+            border-color: red;
+            background-color: #fee;
+        }
+    </style>
+</head>
+
+<body class="m-1 p-1">
+    <div class="bg-info p-2 row">        
+        <div class="col"><h4>@ViewBag.Title</h4></div>        
+        <div class="col-2">            
+            <a class="btn btn-sm btn-primary" asp-action="Logout" asp-controller="Account">Log Out</a>        
+        </div>    
+   </div>    
+    
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success mt-1">@TempData["message"]</div>
+    }
+    @RenderBody()
+</body>
+</html>
