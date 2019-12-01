@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace DotNetCoffee
 {
+    //Published
     public class Startup
     {
         public Startup(IConfiguration configuration) => Configuration = configuration;
